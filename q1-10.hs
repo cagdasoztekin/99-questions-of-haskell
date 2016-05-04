@@ -62,3 +62,36 @@ myLength x = myLengthInc x 0
     where
         myLengthInc [] k = k
         myLengthInc (_:xs) k = myLengthInc xs (k+1)
+
+{-  Question 5
+    Reverse a list.
+
+    Example in Haskell:
+        Prelude> myReverse "A man, a plan, a canal, panama!"
+        "!amanap ,lanac a ,nalp a ,nam A"
+        Prelude> myReverse [1,2,3,4]
+        [4,3,2,1]
+-}
+
+myReverse :: [a] -> [a]
+myReverse l = myReverseAcc l []
+    where
+        myReverseAcc (x:xs) b = myReverseAcc xs (x:b)
+        myReverseAcc [] b = b
+
+{-  Question 6
+    Find out whether a list is a palindrome. A palindrome can be read forward or backward; e.g. (x a m a x).
+
+    Example in Haskell:
+    *Main> isPalindrome [1,2,3]
+    False
+    *Main> isPalindrome "madamimadam"
+    True
+    *Main> isPalindrome [1,2,4,8,16,8,4,2,1]
+    True
+-}
+
+isPalindrome :: (Eq x) => [x] -> Bool
+isPalinrome []      = True
+isPalindrome [_]    = True
+isPalindrome xs = (head xs == last xs) && (isPalindrome (take (length (drop 1 xs) - 1) (drop 1 xs)))
