@@ -1,7 +1,5 @@
 -module(q1_10).
 
--compile(export_all).
-
 -export([myLast/1,
 		 myButLast/1,
 		 elementAt/2,
