@@ -1,6 +1,7 @@
 -module(q11_20).
 
--export([encodeModified/1,
+-export([
+		 encodeModified/1,
 		 decodeModified/1,
 		 decodeModified_/1,
 		 encodeDirect/1,
@@ -10,7 +11,8 @@
 		 split/2,
 		 slice/3,
 		 rotate/2,
-		 removeAt/2]).
+		 removeAt/2
+		]).
 
 
 %% 1 Problem 11
